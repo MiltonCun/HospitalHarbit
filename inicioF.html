@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar con Contenedores Separados</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./CSS/styles.css">
+    <link rel="shortcut icon" href="./IMG/iconHospital.jpg" type="image/x-icon">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <img src="./IMG/logoHospital.png" alt="Logo">
+        </div>
+        <button class="toggle-btn" id="toggle-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav flex-column">
+            <div class="nav-item" id="urgencias">
+                <i class="fas fa-ambulance"></i> <span class="text-black fw-bold fs-5">Ingreso por urgencias</span>
+            </div>
+            <div class="nav-item" id="consulta">
+                <i class="far fa-hospital"></i> <span class="text-black fw-bold fs-5">Ingreso por consulta medica</span>
+            </div>
+            <div class="nav-item" id="farmacia">
+                <i class="fas fa-hand-holding-medical"></i> <span class="text-black fw-bold fs-5">Farmacia</span>
+            </div>
+        </div>
+    </div>
+    <!-- Contenedores independientes -->
+    <div class="main-content">
+        <!--Contenedor InicioF-->
+        <div id="contenedorInicioF" class="section">
+            <h2>BIEN BENIDA DOCTORA CODDY </h2>
+            <br>
+            <h3>ESPECIALISTA EN DIAGNÓSTICO</h3>
+            <img src="./IMG/coddy.jpeg" alt="ImagenPerfil" id="imagenPerfil">
+            <h3>Nombre: </h3>
+            <h4>Lissa Coddy</h4>
+            <h3>Número de lisencia:</h3>
+            <h4>05138974</h4>
+        </div>
+        <!--Contenedor Urgencias-->
+        <div id="contenedorUrgencias" class="section">
+            <h2>FORMULARIO PARA INGRESO DE PACIENTE POR URGENCIAS </h2>
+            <!--Información personal-->
+            <h4 class="mt-3">INFORMACIÓN PERSONAL DEL PACIENTE</h4>
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <label for="nombres" class="form-label">Nombres</label>
+                    <input type="text" class="form-control" id="nombresUrgencias" name="nombres">
+                </div>
+                <div class="col-md-3">
+                    <label for="apellidos" class="form-label">Apellidos</label>
+                    <input type="text" class="form-control" id="apellidosUrgencias" name="apellidos">
+                </div>
+                <div class="col-md-3">
+                    <label for="tipoIdentificacion" class="form-label">Tipo de identificación</label>
+                    <select class="form-select" id="tipoIdentificacionUrgencias" name="tipoIdentificacion">
+                        <option selected disabled>Seleccione...</option>
+                        <option value="TI">Tarjeta de Identidad (T.I)</option>
+                        <option value="CC">Cédula de Ciudadanía (C.C)</option>
+                        <option value="PA">Pasaporte</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="numeroIdentificacion" class="form-label">Número de identificación</label>
+                    <input type="text" class="form-control" id="numeroIdentificacionUrgencias"
+                        name="numeroIdentificacion">
+                </div>
+            </div>
+            <!--Descripción de la emergencia-->
+            <h4 class="mt-3">DESCRIPCIÓN DE LA EMERGENCIA</h4>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="nombres" class="form-label">Fecha de ingreso</label>
+                    <input type="text" class="form-control" id="FechaingresoUrgencias" name="nombres">
+                </div>
+                <div class="col-md-6">
+                    <label for="nombres" class="form-label">Hora de ingreso</label>
+                    <input type="text" class="form-control" id="HoraingresoUrgencias" name="nombres">
+                </div>
+                <div class="col-md-12">
+                    <label for="nombres" class="form-label">Causa</label>
+                    <textarea type="text" class="form-control" id="CausaUrgencias" name="nombres"
+                        placeholder="Explicar de manera breve la causa"></textarea>
+                </div>
+            </div>
+            <!--Evaulación inicial-->
+            <div class="row mt-3">
+                <h4 class="col-6">EVALUACIÓN INICIAL</h4>
+                <h4 class="col-6">SINTOMAS PRINCIPALES</h4>
+            </div>
+            <div class="container text-center">
+                <div class="row align-items-start">
+                    <div class="col-6">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Presión arterial</span>
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default" id="PresionUrgencias">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Frecuencia cardíaca</span>
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default" id="FrecuenciaUrgencias">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Saturación de O₂</span>
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default" id="SaturacionUrgencias">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Temperatura</span>
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default" id="TemperaturaUrgencias">
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                            <label class="form-check-label" for="flexCheckIndeterminate">
+                                Dolor torácico
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                            <label class="form-check-label" for="flexCheckIndeterminate">
+                                Dificultad respiratoria
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                            <label class="form-check-label" for="flexCheckIndeterminate">
+                                Hemorragia
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                            <label class="form-check-label" for="flexCheckIndeterminate">
+                                Trauma
+                            </label>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="nombres" class="form-label ">OTRO</label>
+                            <textarea type="text" class="form-control" id="nombres" name="nombres"
+                                placeholder="Explicar de manera breve la causa"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-primary" onclick="ConsultaCama('2')">CONSULTAR CAMA</button>
+            </div>
+
+        </div>
+        <!--Contenedor de Consulta-->
+        <div id="contenedorConsulta" class="section">
+            <h2>FORMULARIO PARA INGRESO DE PACIENTE POR CONSULTA MEDICA </h2>
+            <!--Información personal-->
+            <h4 class="mt-3">INFORMACIÓN PERSONAL DEL PACIENTE</h4>
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <label for="nombres" class="form-label">Nombres</label>
+                    <input type="text" class="form-control" id="nombresPaciente" name="nombres">
+                </div>
+                <div class="col-md-3">
+                    <label for="apellidos" class="form-label">Apellidos</label>
+                    <input type="text" class="form-control" id="apellidosPaciente" name="apellidos">
+                </div>
+                <div class="col-md-3">
+                    <label for="tipoIdentificacion" class="form-label">Tipo de identificación</label>
+                    <select class="form-select" id="tipoIdentificacionPaciente" name="tipoIdentificacion">
+                        <option selected disabled>Seleccione...</option>
+                        <option value="TI">Tarjeta de Identidad (T.I)</option>
+                        <option value="CC">Cédula de Ciudadanía (C.C)</option>
+                        <option value="PA">Pasaporte</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="numeroIdentificacion" class="form-label">Número de identificación</label>
+                    <input type="text" class="form-control" id="numeroIdentificacionPaciente"
+                        name="numeroIdentificacion">
+                </div>
+            </div>
+            <!--Motivo de la consulta-->
+            <h4 class="mt-3">MOTIVO DE LA CONSULTA</h4>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="nombres" class="form-label">Fecha de consulta</label>
+                    <input type="number" class="form-control" id="nombres" name="nombres">
+                </div>
+                <div class="col-md-6">
+                    <label for="nombres" class="form-label">Sintomas principales</label>
+                    <input type="text" class="form-control" id="nombres" name="nombres">
+                </div>
+            </div>
+            <!--Historial Medico-->
+            <div class="row mt-3">
+                <h4 class="col-4">ENFERMEDADES CONICAS</h4>
+                <h4 class="col-4">ALERGIAS CONOCIDAS</h4>
+                <h4 class="col-4">DIAGNOSTICO CONOCIDO</h4>
+            </div>
+            <div class="container text-center">
+                <div class="row align-items-start">
+                    <div class="col-4">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Diabetes</span>
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Hipertensión</span>
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Asma</span>
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Cardiopatías</span>
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Ninguna</span>
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                            <label class="form-check-label" for="flexCheckIndeterminate">
+                                Penicilina
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                            <label class="form-check-label" for="flexCheckIndeterminate">
+                                Alimentos
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                            <label class="form-check-label" for="flexCheckIndeterminate">
+                                Ninguna
+                            </label>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="nombres" class="form-label ">OTRO</label>
+                            <textarea type="text" class="form-control" id="nombres" name="nombres"
+                                placeholder="Explicar de manera breve las alergias"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="col-md-12">
+                            <label for="nombres" class="form-label ">OTRO</label>
+                            <textarea type="text" class="form-control" id="nombres" name="nombres"
+                                placeholder="Explicar el diagnostico"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-primary" onclick="ConsultaCama('1')">CONSULTAR CAMA</button>
+            </div>
+        </div>
+        <!--Contenedor Asignar Cama-->
+        <div id="contenedorAsignarCama" class="section">
+            <h2>PRIORIZACIÓN Y ASIGANIÓN DE RECURSOS</h2>
+            <h4>NIVEL DE URGENCURGENCIA </h4>
+                <div class="col-md-12">
+                    <select class="form-select" id="selectNiveldeUrgencia" name="tipoIdentificacion">
+                        <option selected disabled>Seleccione...</option>
+                        <option value="Rojo">Rojo (Inmediato: riesgo vital)</option>
+                        <option value="Naranja">Naranja (Muy urgente: < 10 min)</option>
+                        <option value="Amarillo">Amarillo (Urgente: < 30 min) </option>
+                        <option value="Verde">Verde (No urgente: > 1 hora)</option>
+                    </select>
+                </div>
+            <h4>TIPO DE CAMA PARA ASIGNAR</h4>
+            <div class="col-md-12">
+                <select class="form-select" id="selectTipodeCama" name="tipoIdentificacion">
+                    <option selected disabled>Seleccione...</option>
+                    <option value="UCI">UCI (Requiere monitorización continua)</option>
+                    <option value="Observación">Observación (Estable pero necesita seguimiento)</option>
+                    <option value="General">General (Estable, sin complicaciones inmediatas)</option>
+                </select>
+            </div>
+            <h4>PRIORIDAD PARA LA ASIGNACIÓN </h4>
+            <div class="col-md-12">
+                <select class="form-select" id="selectPrioridad" name="tipoIdentificacion">
+                    <option selected disabled>Seleccione...</option>
+                    <option value="Alta">Alta</option>
+                    <option value="Media">Media</option>
+                    <option value="Baja">Baja</option>
+                </select>
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-primary" onclick="ConfirmacionCama()">CONFIRMAR CAMA</button>
+            </div>
+        </div>
+        <!--Contenedor Cama Confirmada-->
+        <div id="ConfirmacionCama" class="section">
+            <h2>LA ASIGNACIÓN DE LA CAMA FUE EXITOSA</h2>
+            <h4>PACIENTE: <span id="nombredelmuerto"></span> </h4> 
+            <h4>IDENTIFICACIÓN: <span id="IDdelmuerto"></span> </h4> 
+            <h4>NIVEL DE URGENCIA: <span id="NiveldeUrgencia"></span></h4>
+            <h4>TIPO DE CAMA: <samp id="TipodeCama"></samp></h4>
+            <h4>PRIORIDAD: <samp id="Prioridad"></samp></h4>
+            <h4>UBICACIÓN: Torre A - Piso 8 - 803</h4>
+        </div>
+        <!--Contenedor Farmacia-->
+        <div id="contenedorFarmacia" class="section">
+            <h2>MEDICAMENTOS DISPONIBLES PARA PACIENTES</h2>
+            <table class="table table-bordered border-primary">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre de Medicamento</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Forma de uso</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <!-- Filas originales -->
+                    <tr>
+                        <th scope="row">01</th>
+                        <td>Paracetamol</td>
+                        <td>60Mg</td>
+                        <td>Cada 6 Horas 15Mg</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">02</th>
+                        <td>Ibuprofeno 600</td>
+                        <td>2.400 Mg</td>
+                        <td>Según el síntoma, asignar dosis</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">03</th>
+                        <td>Amoxicilina</td>
+                        <td>500 Mg</td>
+                        <td>Cada 8 horas</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">04</th>
+                        <td>Omeprazol</td>
+                        <td>20 Mg</td>
+                        <td>1 antes del desayuno</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">05</th>
+                        <td>Loratadina</td>
+                        <td>10 Mg</td>
+                        <td>1 tableta diaria</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">06</th>
+                        <td>Diclofenaco</td>
+                        <td>75 Mg</td>
+                        <td>Cada 12 horas</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">07</th>
+                        <td>Metformina</td>
+                        <td>850 Mg</td>
+                        <td>Con las comidas</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">08</th>
+                        <td>Atorvastatina</td>
+                        <td>40 Mg</td>
+                        <td>Noche con agua</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">09</th>
+                        <td>Salbutamol</td>
+                        <td>100 Mcg</td>
+                        <td>Inhalar según necesidad</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">10</th>
+                        <td>Losartán</td>
+                        <td>50 Mg</td>
+                        <td>1 diaria mañana</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">11</th>
+                        <td>Metronidazol</td>
+                        <td>500 Mg</td>
+                        <td>Cada 6 horas</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">12</th>
+                        <td>Hidroclorotiazida</td>
+                        <td>25 Mg</td>
+                        <td>En ayunas</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">13</th>
+                        <td>Prednisona</td>
+                        <td>5 Mg</td>
+                        <td>Dosis decreciente</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">14</th>
+                        <td>Warfarina</td>
+                        <td>3 Mg</td>
+                        <td>Monitorizar INR</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">15</th>
+                        <td>Levotiroxina</td>
+                        <td>50 Mcg</td>
+                        <td>En ayunas</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">16</th>
+                        <td>Cetirizina</td>
+                        <td>10 Mg</td>
+                        <td>Noche</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">17</th>
+                        <td>Insulina NPH</td>
+                        <td>100 UI/ml</td>
+                        <td>Dosis ajustable</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">18</th>
+                        <td>Dexametasona</td>
+                        <td>4 Mg</td>
+                        <td>Emergencias</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">19</th>
+                        <td>Clonazepam</td>
+                        <td>2 Mg</td>
+                        <td>Noche</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">20</th>
+                        <td>Fluoxetina</td>
+                        <td>20 Mg</td>
+                        <td>Mañana</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">21</th>
+                        <td>Naproxeno</td>
+                        <td>500 Mg</td>
+                        <td>Cada 12 horas</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">22</th>
+                        <td>Esomeprazol</td>
+                        <td>40 Mg</td>
+                        <td>Antes de comer</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">23</th>
+                        <td>Metoclopramida</td>
+                        <td>10 Mg</td>
+                        <td>Cada 8 horas</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">24</th>
+                        <td>Diazepam</td>
+                        <td>5 Mg</td>
+                        <td>Según necesidad</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">25</th>
+                        <td>Furosemida</td>
+                        <td>40 Mg</td>
+                        <td>Mañana</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">26</th>
+                        <td>Captopril</td>
+                        <td>25 Mg</td>
+                        <td>Bajo lengua</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">27</th>
+                        <td>Carvedilol</td>
+                        <td>6.25 Mg</td>
+                        <td>2 veces al día</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">28</th>
+                        <td>Clopidogrel</td>
+                        <td>75 Mg</td>
+                        <td>1 diaria</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">29</th>
+                        <td>Digoxina</td>
+                        <td>0.25 Mg</td>
+                        <td>Monitorizar</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">30</th>
+                        <td>Enalapril</td>
+                        <td>10 Mg</td>
+                        <td>Mañana y noche</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">31</th>
+                        <td>Gabapentina</td>
+                        <td>300 Mg</td>
+                        <td>Cada 8 horas</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">32</th>
+                        <td>Heparina</td>
+                        <td>5000 UI</td>
+                        <td>Subcutánea</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">33</th>
+                        <td>Ketorolaco</td>
+                        <td>30 Mg</td>
+                        <td>Cada 6 horas</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">34</th>
+                        <td>Levofloxacino</td>
+                        <td>500 Mg</td>
+                        <td>1 diaria</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">35</th>
+                        <td>Lisinopril</td>
+                        <td>20 Mg</td>
+                        <td>Mañana</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">36</th>
+                        <td>Morfina</td>
+                        <td>10 Mg</td>
+                        <td>Control del dolor</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">37</th>
+                        <td>Nifedipino</td>
+                        <td>30 Mg</td>
+                        <td>Liberación prolongada</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">38</th>
+                        <td>Olmesartán</td>
+                        <td>20 Mg</td>
+                        <td>1 diaria</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">39</th>
+                        <td>Pantoprazol</td>
+                        <td>40 Mg</td>
+                        <td>Antes de desayuno</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">40</th>
+                        <td>Quetiapina</td>
+                        <td>25 Mg</td>
+                        <td>Noche</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">41</th>
+                        <td>Ramipril</td>
+                        <td>5 Mg</td>
+                        <td>Mañana</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">42</th>
+                        <td>Sertralina</td>
+                        <td>50 Mg</td>
+                        <td>1 diaria</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">43</th>
+                        <td>Tamsulosina</td>
+                        <td>0.4 Mg</td>
+                        <td>Noche</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">44</th>
+                        <td>Tramadol</td>
+                        <td>50 Mg</td>
+                        <td>Cada 6 horas</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">45</th>
+                        <td>Valsartán</td>
+                        <td>160 Mg</td>
+                        <td>1 diaria</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">46</th>
+                        <td>Venlafaxina</td>
+                        <td>75 Mg</td>
+                        <td>Mañana</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">47</th>
+                        <td>Zolpidem</td>
+                        <td>10 Mg</td>
+                        <td>Noche</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">48</th>
+                        <td>Amlodipino</td>
+                        <td>10 Mg</td>
+                        <td>1 diaria</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">49</th>
+                        <td>Bisoprolol</td>
+                        <td>5 Mg</td>
+                        <td>Mañana</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">50</th>
+                        <td>Ciprofloxacino</td>
+                        <td>500 Mg</td>
+                        <td>Cada 12 horas</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">51</th>
+                        <td>Doxazosina</td>
+                        <td>4 Mg</td>
+                        <td>Noche</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">52</th>
+                        <td>Ergocalciferol</td>
+                        <td>1000 UI</td>
+                        <td>Semanal</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- vista, controlador y modelo -->
+    <script src="./JS/VISTA.js"></script>
+    <script src="./JS/CONTROLADOR.js"></script>
+   <!--  <script src="./JS/MODELO.js"></script> -->
+</body>
+
+</html>

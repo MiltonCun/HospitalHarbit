@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar con Contenedores Separados</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./CSS/styles.css">
+    <link rel="shortcut icon" href="./IMG/iconHospital.jpg" type="image/x-icon">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <!-- Sidebar -->
+<!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <img src="./IMG/logoHospital.png" alt="Logo">
+        </div>
+        <button class="toggle-btn" id="toggle-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav flex-column">
+            <div class="nav-item" id="inicio">
+                <i class="fas fa-home"></i> <span class="text-black fw-bold fs-6">INICIO</span>
+            </div>
+            <div class="nav-item" id="notrotros">
+                <i class="fas fa-book"></i> <span class="text-black fw-bold fs-6">SOBRE NOSOTROS</span>
+            </div>
+            <div class="nav-item" id="sedes">
+                <i class="fas fa-building"></i> <span class="text-black fw-bold fs-6">NUESTRAS INSTALACIONES</span>
+            </div>
+        </div>
+    
+        <!-- Botón de inicio de sesión -->
+        <div class="login-button">
+            <button class="btn btn-primary w-100 mt-3" onclick="location.href='login.html'">Iniciar Sesión</button>
+        </div>
+    </div>
+
+    <!-- Contenedores independientes -->
+    <div class="main-content">
+        <!-- Contenedor Inicio -->
+        <div id="contenedorInicio" class="section">
+            <!-- Contenedor hora de atencion -->
+            <h2 class="text-3xl font-semibold text-black-600 mb-6">HORARIOS DE ATENCIÓN</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col-md-2 col-lg-4"> <!-- Ajustar columnas según necesidad -->
+                    <div class="card border-secondary flex-md-row h-100"> <!-- Flex horizontal -->
+                        <div class="card-header d-flex align-items-center"> <!-- Header vertical centrado -->
+                            Horario de Consultas
+                        </div>
+                        <div class="card-body text-secondary">
+                            <h5 class="card-title">De lunes a viernes de 8:00 a 20:00 hrs.</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-4"> <!-- Ajustar columnas según necesidad -->
+                    <div class="card border-secondary flex-md-row h-100"> <!-- Flex horizontal -->
+                        <div class="card-header d-flex align-items-center"> <!-- Header vertical centrado -->
+                            Horario de Consultas
+                        </div>
+                        <div class="card-body text-secondary">
+                            <h5 class="card-title">De lunes a viernes de 8:00 a 20:00 hrs.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Contenedor servicios especiales -->
+            <h2 class="text-3xl font-semibold text-black-600 mb-6">SERVICIOS ESPECIALES</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <div class="card">
+                        <img src="./IMG/CirugiaColmunna.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Cirugia de Colmunna</h5>
+                            <p class="card-text">Procedimiento que se realiza para tratar problemas en la zona baja de
+                                la
+                                espalda.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <div class="card">
+                        <img src="./IMG/Ortopedia.jpg" class="card-img-top" id="img-orto" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Ortopedia</h5>
+                            <p class="card-text">Especialidad médica que se encarga de tratar el sistema
+                                musculoesquelético.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <div class="card">
+                        <img src="./IMG/medicogeneral.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Medico General</h5>
+                            <p class="card-text">Diagnosticar y resolver con tratamiento medico y con procedimientos
+                                sencillos la mayoría de los padecimientos que el ser humano sufre en su vida, desde niño
+                                hasta la vejez.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Contenedor sobre nosotros -->
+        <div id="contenedorNotrotros" class="section">
+            <h2>SOBRE NOSOTROS</h2>
+            <h4>MISIÓN</h4>
+            <p>En el Hospital Harbit, nos comprometemos a brindar atención médica integral, segura y humana, centrada en
+                las necesidades únicas de cada paciente. Utilizamos tecnología de vanguardia, prácticas basadas en
+                evidencia y un enfoque multidisciplinario para garantizar diagnósticos precisos, tratamientos
+                innovadores y recuperaciones efectivas. Nuestro equipo de profesionales altamente calificados trabaja
+                con empatía y ética, promoviendo la prevención, la educación en salud y el acceso equitativo a servicios
+                médicos de excelencia para transformar vidas y fortalecer a nuestras comunidades.</p>
+            <h4>VISIÓN</h4>
+            <p>Ser reconocidos como el referente nacional en innovación y calidad en salud, destacándonos por:
+                <br>
+                1. Liderazgo en investigación médica y adopción de tecnologías disruptivas.
+                <br>
+                2. Cuidado centrado en el paciente, donde la calidez y la seguridad definen cada interacción.
+                <br>
+                3. Impacto social, mediante alianzas estratégicas y programas accesibles que reduzcan desigualdades en
+                salud.
+                <br>
+                4. Formación continua de profesionales comprometidos con la excelencia y la ética.
+                <br>
+                En 2030, el Hospital Harbit será sinónimo de confianza, avanzando hacia un futuro donde la medicina
+                preventiva y personalizada marque la diferencia en el bienestar de las generaciones actuales y futuras.
+            </p>
+        </div>
+        <!-- Contenedor sedes -->
+        <div id="contenedorSedes" class="section">
+            <h2>SEDES</h2>
+                <div class="container text-center">
+                        <div class="row align-items-start">
+                
+                            <div class="col-6">
+                                <!--Sede Bogotá-->
+                                <div class="card border-info mb-3" style="max-width: 25rem;">
+                                    <div class="card-header text-black fw-bold fs-5">Bogotá D.C</div>
+                                    <div class="card-body">
+                                        <ul>
+                                            <li><h5 class="card-title">BARRIO TUNAL</h5></li>
+                                                <p class="card-text">Cra. 20#43Sur47</p>
+                                            <li><h5 class="card-title">BARRIO LA CANDELARIA</h5></li>
+                                                <p class="card-text">Av. Caracas #1-65</p>
+                                            <li><h5 class="card-title">BARRIO TINTAL</h5></li>
+                                                <p class="card-text">Cl. 10#86-58</p>
+                                            <li><h5 class="card-title">BARRIO CHAPINERO</h5></li>
+                                            <p class="card-text">Cl. 66#15-41</p>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!---Sede Medellín-->
+                                <div class="card border-info mb-3" style="max-width: 25rem;">
+                                    <div class="card-header text-black fw-bold fs-5">Medellín</div>
+                                    <div class="card-body">
+                                        <ul>
+                                            <li><h5 class="card-title">BARRIO EL POBLADO</h5></li>
+                                                <p class="card-text">Cl. 7#39-290</p>
+                                            <li><h5 class="card-title">BARRIO BELÉN</h5></li>
+                                                <p class="card-text">Dg. 75B#2A-80/140</p>
+                                            <li><h5 class="card-title">BARRIO ROBLEDO</h5></li>
+                                                <p class="card-text">Dl. 78B #69-240</p>
+                                            <li><h5 class="card-title">BARRIO ITAGUI</h5></li>
+                                            <p class="card-text">Cl. 32#61180 61-a</p>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <div class="col-6">
+                                <!--Sede calí-->
+                                <div class="card border-info mb-3" style="max-width: 25rem;">
+                                    <div class="card-header text-black fw-bold fs-5">Calí</div>
+                                    <div class="card-body">
+                                        <ul>
+                                            <li><h5 class="card-title">BARRIO COMUNA 10</h5></li>
+                                                <p class="card-text">Cl. 10#33-51</p>
+                                            <li><h5 class="card-title">BARRIO CAMINO REAL</h5></li>
+                                                <p class="card-text">Cl. 9C#50-25</p>
+                                            <li><h5 class="card-title">BARRIO COMUNA 17</h5></li>
+                                                <p class="card-text">Cra. 98#18-49</p>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!--Sede manizales-->
+                                <div class="card border-info mb-3" style="max-width: 25rem;">
+                                    <div class="card-header text-black fw-bold fs-5">Manizales</div>
+                                    <div class="card-body">
+                                        <ul>
+                                            <li><h5 class="card-title">BARRIO VILLAMARIA</h5></li>
+                                                <p class="card-text">Cl. 6#5-68</p>
+                                            <li><h5 class="card-title">BARRIO VILLA PILAR</h5></li>
+                                                <p class="card-text">Cra. 4C #11-15</p>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!--Sede Pitalito-->
+                                 <div class="card border-info mb-3" style="max-width: 25rem;">
+                                    <div class="card-header text-black fw-bold fs-5">Pitalito</div>
+                                    <div class="card-body">
+                                        <ul>
+                                            <li><h5 class="card-title">BARRIO JUAN BOSCO</h5></li>
+                                                <p class="card-text">AVENIDA</p>
+                                            <li><h5 class="card-title">BARRIO REINA ISABEL</h5></li>
+                                                <p class="card-text">Cra. 1A  BIS #5-40</p>
+                                        </ul>
+                                    </div> 
+                                </div>        
+                            </div>
+                        </div>
+                </div>   
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./JS/VISTA.js"></script>
+</body>
+
+</html>

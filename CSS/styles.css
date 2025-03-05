@@ -1,0 +1,157 @@
+/* Ajuste del body con flexbox */
+body {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    background-color: #ffffff;
+}
+
+/* Sidebar fija */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #58CFFB;
+    color: white;
+    transition: width 0.3s;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 767.98px) {
+    .sidebar {
+        left: -250px; /* Ocultar la sidebar fuera de la pantalla */
+        transition: left 0.3s ease;
+    }
+
+    .sidebar.open {
+        left: 0; /* Mostrar la sidebar */
+    }
+
+    .main-content {
+        margin-left: 0; /* Eliminar el margen izquierdo en pantallas pequeñas */
+    }
+
+    .toggle-btn {
+        right: -40px; /* Ajustar la posición del botón de toggle */
+    }
+}
+
+.sidebar.collapsed {
+    width: 80px;
+}
+
+.sidebar .logo {
+    text-align: center;
+    padding: 10px;
+}
+
+.sidebar .logo img {
+    max-width: 250px;
+    height: auto;
+    transition: all 0.3s;
+}
+
+.sidebar.collapsed .logo img {
+    max-width: 50px;
+}
+
+.sidebar .nav-item {
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sidebar .nav-item i {
+    margin-right: 10px;
+    transition: margin 0.3s;
+}
+
+.sidebar.collapsed .nav-item i {
+    margin-right: 0;
+}
+
+.sidebar.collapsed .nav-item span {
+    display: none;
+}
+
+/* Botón para expandir/retraer */
+.toggle-btn {
+    position: absolute;
+    top: 15px;
+    right: -20px;
+    background-color: #0077aa;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.toggle-btn:hover {
+    background-color: #005f88;
+}
+
+/* Botón de inicio de sesion*/
+.login-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+}
+
+/* Contenedor principal */
+.main-content {
+    margin-left: 250px;
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    transition: margin-left 0.3s;
+}
+
+/* Cuando la pantalla sea pequeña */
+@media (max-width: 767.98px) {
+    .main-content {
+        margin-left: 0; /* Quita el margen izquierdo */
+    }
+}
+
+.sidebar.collapsed + .main-content {
+    margin-left: 80px;
+}
+
+/* Contenedores independientes */
+.section {
+    flex: 1 1 100%;
+    background: #D1FCFA;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: none; /* Ocultos por defecto */
+}
+
+.section.active {
+    display: flex; /* Se muestran solo los activos */
+    flex-direction: column;
+}
+
+#img-orto {
+    width: 100%;
+    height: 250px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+#imagenPerfil {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 150px;
+}

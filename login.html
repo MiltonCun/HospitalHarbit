@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Hospital</title>
+    <!-- Optimización de enlaces Bootstrap -->
+    <link rel="stylesheet" href="../Librerias/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./CSS/login.css">
+    <link rel="shortcut icon" href="./IMG/iconHospital.jpg" type="image/x-icon">
+</head>
+<body>
+    <div class="main-wrapper">
+        <img src="./IMG/logoHospital.png" class="hospital-logo" alt="Logo Hospital">
+        <div class="login-container">
+            <h1>ACCESO AL SISTEMA</h1>
+            <h2 class="hospital-title">HOSPITAL HARBIT</h2> <!-- Título combinado -->
+            <form id="loginForm">
+                <div class="input-group">
+                    <label>INGRESE SU USUARIO</label> <!-- Texto según imagen -->
+                    <input type="text" id="username" required>
+                </div>
+                <div class="input-group">
+                    <label>INGRESE SU CONTRASEÑA</label> <!-- Texto según imagen -->
+                    <input type="password" id="password" required>
+                </div>
+                <button type="button" onclick="validarLogin()">ACCEDER</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts optimizados -->
+    <script src="./JS/login.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../Librerias/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
