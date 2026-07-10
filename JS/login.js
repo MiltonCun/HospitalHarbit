@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 sessionStorage.setItem('userRole', response.role);
                 
                 // Redirigir a dashboard
-                window.location.href = './dashboard.html';
+                window.location.href = './inicioF.html';
             } else {
                 recordFailedAttempt();
                 showError(response.message || 'Usuario o contraseña incorrectos');
