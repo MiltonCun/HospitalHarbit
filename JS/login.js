@@ -13,6 +13,15 @@ document.addEventListener('DOMContentLoaded', function() {
     let loginAttempts = 0;
     let lastAttemptTime = 0;
 
+    // ==================== CREDENCIALES LOCALES (LABORATORIO) ====================
+    // En producción: NUNCA guardar credenciales en el cliente
+    const LOCAL_USERS = {
+        'admin': 'admin123',
+        'doctor': 'doc1234',
+        'enfermera': 'enf1234',
+        'paciente': 'pac1234'
+    };
+
     // ==================== VALIDACIÓN EN TIEMPO REAL ====================
     
     usernameField.addEventListener('blur', function() {
@@ -101,16 +110,18 @@ document.addEventListener('DOMContentLoaded', function() {
         submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Cargando...';
         
         try {
-            // TODO: Reemplazar con API backend real
-            // En producción: usar HTTPS, hash de contraseña, JWT/sessions
-            
-            const response = await sendCredentialsSecurely(username, password);
+            // Llamar a la función que valida según el modo
+            const response = await validateCredentials(username, password);
             
             if (response.success) {
                 // Limpiar intentos fallidos
                 loginAttempts = 0;
                 localStorage.removeItem('loginAttempts');
                 localStorage.removeItem('lastAttemptTime');
+                
+                // Guardar información del usuario en sesión
+                sessionStorage.setItem('user', username);
+                sessionStorage.setItem('userRole', response.role);
                 
                 // Redirigir a dashboard
                 window.location.href = './dashboard.html';
@@ -128,8 +139,59 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // ==================== ENVÍO SEGURO DE CREDENCIALES ====================
+    // ==================== VALIDACIÓN DE CREDENCIALES ====================
+    // Esta función detecta automáticamente si usar local o API
+    async function validateCredentials(username, password) {
+        // Cambiar USE_LOCAL_AUTH a false cuando tengas API lista
+        const USE_LOCAL_AUTH = true;
+        
+        if (USE_LOCAL_AUTH) {
+            // MODO LOCAL (Laboratorio)
+            return validateLocalCredentials(username, password);
+        } else {
+            // MODO API (Producción)
+            return await sendCredentialsSecurely(username, password);
+        }
+    }
+
+    // ==================== VALIDACIÓN LOCAL (LABORATORIO) ====================
+    function validateLocalCredentials(username, password) {
+        console.log('🧪 Usando autenticación LOCAL (modo laboratorio)');
+        
+        // Simular delay de red (mejor UX)
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                if (LOCAL_USERS[username] && LOCAL_USERS[username] === password) {
+                    resolve({
+                        success: true,
+                        message: 'Login exitoso',
+                        role: getRoleFromUsername(username)
+                    });
+                } else {
+                    resolve({
+                        success: false,
+                        message: 'Usuario o contraseña incorrectos'
+                    });
+                }
+            }, 500);
+        });
+    }
+
+    // ==================== OBTENER ROL DEL USUARIO ====================
+    function getRoleFromUsername(username) {
+        const roles = {
+            'admin': 'administrador',
+            'doctor': 'medico',
+            'enfermera': 'enfermeria',
+            'paciente': 'paciente'
+        };
+        return roles[username] || 'usuario';
+    }
+
+    // ==================== ENVÍO SEGURO DE CREDENCIALES (API) ====================
     async function sendCredentialsSecurely(username, password) {
+        console.log('🔐 Usando autenticación API (modo producción)');
+        
         try {
             const response = await fetch('https://api.example.com/login', {
                 method: 'POST',
@@ -149,6 +211,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             const data = await response.json();
+            
+            // Guardar token JWT si la API lo devuelve
+            if (data.token) {
+                localStorage.setItem('authToken', data.token);
+            }
+            
             return data;
             
         } catch (error) {
